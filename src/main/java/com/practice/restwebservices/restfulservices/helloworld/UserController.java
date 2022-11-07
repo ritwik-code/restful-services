@@ -39,7 +39,6 @@ public class UserController {
     public void deleteUser(@PathVariable Integer id){
         userDao.deleteOne(id);
 //        return ResponseEntity.created().build();
-        
     }
 
 }
