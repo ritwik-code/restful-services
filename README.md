@@ -49,3 +49,5 @@ What's happening in the background? Spring Boot Starters and Autoconfiguration
 
 ResponseEntity
 ServletUriComponentsBuilder
+
+HATEOS - Hypermedia as the engine of application state

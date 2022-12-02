@@ -1,10 +1,15 @@
 package com.practice.restwebservices.restfulservices.helloworld;
 
+import jakarta.validation.constraints.Past;
+import jakarta.validation.constraints.Size;
+
 import java.time.LocalDate;
 
 public class User {
     private Integer id;
+    @Size(min =2, message = "Minimum 2 characters required for name")
     private String name;
+    @Past(message = "DOB should be in the past")
     private LocalDate age;
 
     public User(Integer id, String name, LocalDate age) {
