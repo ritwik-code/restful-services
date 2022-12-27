@@ -1,21 +1,42 @@
 package com.practice.restwebservices.restfulservices.helloworld;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.validation.constraints.Past;
 import jakarta.validation.constraints.Size;
 
 import java.time.LocalDate;
+import java.util.List;
 
+@Entity(name = "user_details")
 public class User {
+
+    @Id
+    @GeneratedValue
     private Integer id;
-    @Size(min =2, message = "Minimum 2 characters required for name")
+    @Size(min = 2, message = "Minimum 2 characters required for name")
     private String name;
     @Past(message = "DOB should be in the past")
-    private LocalDate age;
+    private LocalDate birthDate;
 
-    public User(Integer id, String name, LocalDate age) {
-        this.id = id;
-        this.name = name;
-        this.age = age;
+    @OneToMany(mappedBy = "user")
+    @JsonIgnore
+    private List<Post> posts;
+
+    public User() {
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", birthDate=" + birthDate +
+                ", posts=" + posts +
+                '}';
     }
 
     public Integer getId() {
@@ -34,20 +55,19 @@ public class User {
         this.name = name;
     }
 
-    public LocalDate getAge() {
-        return age;
+    public LocalDate getBirthDate() {
+        return birthDate;
     }
 
-    public void setAge(LocalDate age) {
-        this.age = age;
+    public void setBirthDate(LocalDate birthDate) {
+        this.birthDate = birthDate;
     }
 
-    @Override
-    public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", age=" + age +
-                '}';
+    public List<Post> getPosts() {
+        return posts;
+    }
+
+    public void setPosts(List<Post> posts) {
+        this.posts = posts;
     }
 }
