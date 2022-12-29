@@ -12,7 +12,8 @@
   - Endpoint
 	
 ## Types of web services
-  ###SOAP 
+
+  ### SOAP 
   Acronym for Simple Object Access Protocol. Uses _**only XML**_ for request and response.
 
   * SOAP Structure 
@@ -28,7 +29,7 @@
     - Request Structure 
     - Response Structure 
   
-  ###REST 
+  ### REST 
   Acronym for Representational State Transfer, Made by **_Roy Fielding_** creator of HTTP.
     
   * The key unit in rest, post abstraction is called **_Resource_**. All the operations are performed on resources.
@@ -36,38 +37,41 @@
   * Essentially use HTTP to perform operation on resource
   * Rest can use any data format for transfer XML, JSON, HTML etc
   * Definition - No standard, has several WADL/Swagger
-___
+
   
-##Spring
+## Spring
 
 Spring works as a dependency management system. Spring helps with Dependency Injection and Inversion of Controller.
 Spring container uses beans and config files to deploy an application. 
 
-##Important annotations
+![alt text](https://static.javatpoint.com/images/sp/spmodules.jpg)
 
-###Spring starter
+
+## Important annotations
+
+### Spring starter
 @SpringBootApplication
 
-###Bean Configuration
+### Bean Configuration
 @Autoconfigure
 
-###Controller
+### Controller
 @RestController
 @GetMapping
 @PathVariable
 Locale
 
-###Data validity Checks
+### Data validity Checks
 @Valid
 @JSONIgnore
 
 
 
-###Error Management
+### Error Management
 @ControllerAdvice
 @ExceptionHandler
 
-###Filtering
+### Filtering
 MappingJacksonValue
 SimpleBeanPropertyFilter - variations?
 FilterProvider - Adds filters
@@ -75,7 +79,7 @@ FilterProvider - Adds filters
 @JSONIgnoreProperty("Value1")
 @JsonFilter("SomeBeanFilter")
 
-###Entity JPA
+### Entity JPA
 JpaRepository
 @Entity
 @ManyToOne(fetch = FetchType.LAZY)
@@ -88,7 +92,7 @@ JpaRepository
 
 Important config files - Used by container along with beans
 
-###Important library classes
+### Important library classes
 Error Handling
 ResponseEntityExceptionHandler
 ResponseEntity
@@ -98,7 +102,7 @@ Data Repository
 JpaRepository
 JPA vs Spring JPA vs H2 api
 
-###HATEOS - Hypermedia as the engine of application state
+### HATEOS - Hypermedia as the engine of application state
     @GetMapping(path = "/jpa/users/{id}")
     public EntityModel<User> findOne(@PathVariable Integer id) {
         Optional<User> user = repository.findById(id);
@@ -118,7 +122,7 @@ JPA vs Spring JPA vs H2 api
     }
 
 
-###Versioning
+### Versioning
 
 
     @RestController
