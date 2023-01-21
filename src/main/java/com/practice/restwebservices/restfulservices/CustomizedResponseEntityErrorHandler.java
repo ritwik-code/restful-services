@@ -40,5 +40,4 @@ class CustomizedResponseEntityExceptionHandler extends ResponseEntityExceptionHa
                 request.getDescription(false));
         return new ResponseEntity(errorDetails, HttpStatus.NOT_FOUND);
     }
-
 }

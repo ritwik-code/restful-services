@@ -25,7 +25,6 @@ public class Post {
         return "Post{" +
                 "id=" + id +
                 ", description='" + description + '\'' +
-                ", user=" + user +
                 '}';
     }
 
